@@ -1,0 +1,4 @@
+. we cannot delete objects on stack; 
+. we cannot delete an object twice;
+. we should assign the pointer to be NULL after delete it to avoid deleting twice;
+
