@@ -2,3 +2,8 @@
 . we cannot delete an object twice;
 . we should assign the pointer to be NULL after delete it to avoid deleting twice;
 . header and include: do as least as we can. nothing->forward declare->include
+. initialize list in the constructor is more efficient:
+  in Foo::Foo(Bar bar):_bar(bar){}, _bar is init once;
+  in Foo::Foo(Bar bar){ this->_bar = bar; }, _bar is still initilized because it's the member of Foo; 
+  the order in the initilize list is not important, only the order in which member declares matters. But when this two orders doesn't match, the compiler will remaind you by a WARNING.
+. 
