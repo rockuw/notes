@@ -1,7 +1,7 @@
 . we cannot delete objects on stack; 
 . we cannot delete an object twice;
 . we should assign the pointer to be NULL after delete it to avoid deleting twice;
-. header and include: do as least as we can. nothing->forward declare->include
+. header and include: do as least as we can. nothing->forward declare->include, a friend class needs nothing.
 . initialize list in the constructor is more efficient:
   in Foo::Foo(Bar bar):_bar(bar){}, _bar is init once;
   in Foo::Foo(Bar bar){ this->_bar = bar; }, _bar is still initilized because it's the member of Foo; 
