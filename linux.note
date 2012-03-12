@@ -1,0 +1,1 @@
+. in Mac OS, the nameservers in /etc/resolv.conf is ONLY used by nslookup host
