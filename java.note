@@ -1,0 +1,2 @@
+* Java EE also provides standard login mechanisms so application developers do not have to implement these mechanisms in their applications. 
+* deployment descriptor is read at runtime. does it need redeployment if we modify it?

@@ -1,1 +1,3 @@
-. in Mac OS, the nameservers in /etc/resolv.conf is ONLY used by nslookup host
+* in Mac OS, the nameservers in /etc/resolv.conf is ONLY used by nslookup host
+* in crontab the PATH is very limited(/bin:/usr/bin), so if you want to ping in crontab, 
+  you should use /sbin/ping:)
