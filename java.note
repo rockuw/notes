@@ -1,2 +1,10 @@
 * Java EE also provides standard login mechanisms so application developers do not have to implement these mechanisms in their applications. 
 * deployment descriptor is read at runtime. does it need redeployment if we modify it?
+* references to resources(web service, data source...) can be injected using annotation. for example:
+    <pre class="java">
+    import javax.xml.ws.WebServiceRef;
+    public class ResponseServlet extends HTTPServlet {
+    @WebServiceRef(wsdlLocation=
+        "http://localhost:8080/helloservice/hello?wsdl") 
+    static HelloService service;
+    </pre>
