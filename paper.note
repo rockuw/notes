@@ -1,0 +1,2 @@
+* In many practical applications, parameter estimation for naive Bayes models uses the method of maximum likelihood; in other words, one can work with the naive Bayes model without believing in Bayesian probability or using any Bayesian methods.
+* Another common technique for handling continuous values is to use binning to discretize the values. 

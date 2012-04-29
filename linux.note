@@ -1,3 +1,14 @@
 * in Mac OS, the nameservers in /etc/resolv.conf is ONLY used by nslookup host
 * in crontab the PATH is very limited(/bin:/usr/bin), so if you want to ping in crontab, 
   you should use /sbin/ping:)
+* when the file in a directory is modified and committed, the revision of the dir itself will 
+    not be changed. this is weird.
+        svn status -v
+        11  11  dir
+        11  11  dir/file
+    modify dir/file and commit, then:
+        svn status -v
+        11  11  dir
+        12  12  dir/file
+* in script file, when referring to file path, we can't use the '~' as home direcory as we 
+    always do. because /bin/sh has no sense of who you are.
