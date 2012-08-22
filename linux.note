@@ -10,5 +10,5 @@
         svn status -v
         11  11  dir
         12  12  dir/file
-* in script file, when referring to file path, we can't use the '~' as home direcory as we 
-    always do. because /bin/sh has no sense of who you are.
+* when using '<' or '>' for testing equality in shell script, we have to add 
+'\' before them for escape. '>' and '<' have special meaning in bash.
