@@ -12,3 +12,4 @@
         12  12  dir/file
 * when using '<' or '>' for testing equality in shell script, we have to add 
 '\' before them for escape. '>' and '<' have special meaning in bash.
+* in ubuntu, if there exists a file named .bash_login in $HOME, .profile will not be loaded.
