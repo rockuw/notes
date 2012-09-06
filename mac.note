@@ -3,3 +3,5 @@
 * irb-1.9.3里不能输入中文的解决办法：
     rvm pkg install readline
     rvm reinstall 1.9.3 --with-readline-dir=$rvm_path/usr
+* rails, flash[:notice] for redirect and flash.now[:notice] for rendering now.
+* assigns(:posts) in test returns the @posts instance variable in the Controller being tested.
