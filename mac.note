@@ -5,3 +5,16 @@
     rvm reinstall 1.9.3 --with-readline-dir=$rvm_path/usr
 * rails, flash[:notice] for redirect and flash.now[:notice] for rendering now.
 * assigns(:posts) in test returns the @posts instance variable in the Controller being tested.
+* rails, @content.html_safe() makes it not escaping HTML
+* when post a comment belonging to a post, you can get the post id in comment_controller.rb as the following:
+    1. define routes:
+    resources :post do
+        resources :comment
+    end
+    2. get post id, note the URL is like this: /post/1/comments
+    post_id = params[:post_id]
+* coffee script. nowadays javascript is always written as closures. to make the function accessible from the outside, you need assign it to some global variables:
+    window.markdown = Markdown;
+and use it the same way:
+    onClick = "window.markdown.to..."
+* code highlight: highlight.js, editor highlight: codemirror. awesome!
