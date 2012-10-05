@@ -1,0 +1,1 @@
+* `auto-complete-mode` is slow when `flyspell-mode` is on. Solution is to turn `flyspell-mode` off or turn on `ac-flyspell-workaround` instead. 

@@ -13,3 +13,10 @@
 * when using '<' or '>' for testing equality in shell script, we have to add 
 '\' before them for escape. '>' and '<' have special meaning in bash.
 * in ubuntu, if there exists a file named .bash_login in $HOME, .profile will not be loaded.
+* ubuntu rails environment:
+    1. install rvm
+    2. **before install ruby**, install the following:
+        - build-essential
+        - zlib1g-dev
+        - libssl-dev
+        - libsqlite3-dev
