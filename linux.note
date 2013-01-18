@@ -20,3 +20,5 @@
         - zlib1g-dev
         - libssl-dev
         - libsqlite3-dev
+* to match all the sub-directories, use `**/*.c`. But need to enable
+  *globstar* by `shopt -s globstar`

@@ -1,8 +1,16 @@
 * 在Mac下对NTFS写文件系统，先安装ntfs-3g，然后再安装macfuse。
-   出现do not receive a signal within 15 seconds. 用这个解决方法：[macfuse](http://apple.stackexchange.com/questions/20037/ntfs-3g-unmounts-ntfs-partitions-because-it-did-not-receive-signal-in-15-second)
+   出现do not receive a signal within 15 seconds. 用这个解决方法：
+   [macfuse](http://apple.stackexchange.com/questions/20037/ntfs-3g-unmounts-ntfs-partitions-because-it-did-not-receive-signal-in-15-second)
+   
 * irb-1.9.3里不能输入中文的解决办法：
-    rvm pkg install readline
-    rvm reinstall 1.9.3 --with-readline-dir=$rvm_path/usr
+
+        rvm pkg install readline
+        rvm reinstall 1.9.3 --with-readline-dir=$rvm_path/usr
+    or:
+    
+        brew install readline
+        rvm reinstall 1.9.3 --with-readline-dir=/usr/local/opt/readline    
+    
 * rails, flash[:notice] for redirect and flash.now[:notice] for rendering now.
 * assigns(:posts) in test returns the @posts instance variable in the Controller being tested.
 * rails, @content.html_safe() makes it not escaping HTML
@@ -18,3 +26,40 @@
 and use it the same way:
     onClick = "window.markdown.to..."
 * code highlight: highlight.js, editor highlight: codemirror. awesome!
+* self built gdb not working, solution:    
+  first codesign the excutable following [here][codesign in mac]
+  
+    chgrp procmod path/to/gdb
+    chmod g+s path/to/gdb
+    
+* upgrade from Lion to Mountain Lion, problems:
+    1. /usr/bin/emacs is still 22.1, remove it to use the version
+    under /usr/local/bin
+    2. gcc, g++ is missing, need to install XCode 4.5 and command line tools
+    3. texlive PATH missing, need to add it back in ~/.bashrc
+
+* rvm PATH issue: we should have a symbol link of the current ruby
+  version in .rvm/environments/
+* When the error `superclass mismatch for class Mark` appears, it
+  means there are two different definition of class Mark in your
+  system(gems, native extensions). Resolve this by keeping only one of
+  them. In this case, the class Mark is defined both in psych(the
+  .bundle) and parser.rb(the psych gem). So `gem uninstall psych`
+  would solve the problem.
+
+* with the following ruby code:
+
+        a = [[1, 2], [3, 4]]
+        a.each do |(a, b)|
+          puts a, b
+        end
+  
+  a, b will be 1, 2 and 3, 4.
+
+* In rails, the coffee script wraps all the functions in a closure. In
+  order to invoke the functions in the HTML, we can define it as
+  global functions by adding `@` in front of the function name. Or we
+  can attach it to the global objects like `window` by defining the
+  function like this: `window.foo =`
+  
+[codesign in mac]: http://sourceware.org/gdb/wiki/BuildingOnDarwin
